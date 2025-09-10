@@ -1,0 +1,162 @@
+Ssh aaasthasingh@Aasthas-MacBook-Air ~ % ssh
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]
+           [-c cipher_spec] [-D [bind_address:]port] [-E log_file]
+           [-e escape_char] [-F configfile] [-I pkcs11] [-i identity_file]
+           [-J destination] [-L address] [-l login_name] [-m mac_spec]
+           [-O ctl_cmd] [-o option] [-P tag] [-p port] [-R address]
+           [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]
+           destination [command [argument ...]]
+       ssh [-Q query_option]
+aasthasingh@Aasthas-MacBook-Air ~ % ipconfig getifaddr en0
+10.156.79.122
+aasthasingh@Aasthas-MacBook-Air ~ % ssh 10.156.79.122
+ssh: connect to host 10.156.79.122 port 22: Connection refused
+aasthasingh@Aasthas-MacBook-Air ~ % ssh asingh101@135.181.73.242
+The authenticity of host '135.181.73.242 (135.181.73.242)' can't be established.
+ED25519 key fingerprint is SHA256:nByuzTNLysB6/gO4TD2Wif77LtS4tjscLbef6cjiHO4.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '135.181.73.242' (ED25519) to the list of known hosts.
+asingh101@135.181.73.242's password: 
+Linux cs525 6.12.41+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.41-1 (2025-08-12) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+asingh101@cs525:~$ pwd
+/home/asingh101
+asingh101@cs525:~$ ls
+secret
+asingh101@cs525:~$ cd .ssh
+-bash: cd: .ssh: No such file or directory
+asingh101@cs525:~$ mkdir .ssh
+asingh101@cs525:~$ cd .ssh
+asingh101@cs525:~/.ssh$ cd
+asingh101@cs525:~$ cd .ssh
+asingh101@cs525:~/.ssh$ ls
+asingh101@cs525:~/.ssh$ ssh cs 525
+ssh: Could not resolve hostname cs: Name or service not known
+asingh101@cs525:~/.ssh$ cd
+asingh101@cs525:~$ ssh cs 525
+ssh: Could not resolve hostname cs: Name or service not known
+asingh101@cs525:~$ ls
+secret
+asingh101@cs525:~$ ls -al
+total 28
+drwx------  3 asingh101 asingh101 4096 Sep  2 23:10 .
+drwxr-xr-x 28 root      root      4096 Sep  2 22:51 ..
+-rw-r--r--  1 asingh101 asingh101  220 Sep  2 17:05 .bash_logout
+-rw-r--r--  1 asingh101 asingh101 3526 Sep  2 17:05 .bashrc
+-rw-r--r--  1 asingh101 asingh101    0 Sep  2 17:05 .cloud-locale-test.skip
+-rw-r--r--  1 asingh101 asingh101  807 Sep  2 17:05 .profile
+-rw-rw-r--  1 asingh101 asingh101   12 Sep  2 17:13 secret
+drwxrwxr-x  2 asingh101 asingh101 4096 Sep  2 23:10 .ssh
+asingh101@cs525:~$ cat secret
+LuorXvQ2Fj0
+asingh101@cs525:~$ ls -ald asingh101
+ls: cannot access 'asingh101': No such file or directory
+asingh101@cs525:~$ cd ..
+asingh101@cs525:/home$ ls -ald asingh101
+drwx------ 3 asingh101 asingh101 4096 Sep  2 23:10 asingh101
+asingh101@cs525:/home$ cd
+asingh101@cs525:~$ ls
+secret
+asingh101@cs525:~$ cd
+asingh101@cs525:~$ cd ..
+asingh101@cs525:/home$ cd ..
+asingh101@cs525:/$ ls
+bin   home               installimage.debug  media  root  sys  vmlinuz
+boot  initrd.img         lib                 mnt    run   tmp  vmlinuz.old
+dev   initrd.img.old     lib64               opt    sbin  usr
+etc   installimage.conf  lost+found          proc   srv   var
+asingh101@cs525:/$ cd usr
+asingh101@cs525:/usr$ ls
+bin  games  include  lib  lib64  libexec  local  sbin  share  src
+asingh101@cs525:/usr$ cd local
+asingh101@cs525:/usr/local$ ls
+bin  etc  games  include  lib  libexec  man  sbin  share  src
+asingh101@cs525:/usr/local$ cd share
+asingh101@cs525:/usr/local/share$ ls
+ca-certificates  emacs  man
+asingh101@cs525:/usr/local/share$ cd
+asingh101@cs525:~$ cd ..
+asingh101@cs525:/home$ cd ..
+asingh101@cs525:/$ cd usr
+asingh101@cs525:/usr$ ls
+bin  games  include  lib  lib64  libexec  local  sbin  share  src
+asingh101@cs525:/usr$ cd share
+asingh101@cs525:/usr/share$ ls
+aclocal          debianutils      iproute2              perl5
+aclocal-1.17     dhcpcd           iptables              pixmaps
+alsa             dict             java                  pkgconfig
+applications     distro-info      javascript            polkit-1
+apport           doc              keyrings              publicsuffix
+apt              doc-base         libc-bin              python3
+aptitude         dpkg             libdebuginfod-common  python-apt
+at               emacs            libgcrypt20           readline
+autoconf         emacsen-common   libtool               reportbug
+automake-1.17    file             lintian               rsync
+base-files       fish             locale                runit
+base-passwd      gcc              man                   source-highlight
+bash-completion  gdb              maven-repo            systemd
+binfmts          gettext          mdadm                 tabset
+bug              git-core         menu                  tasksel
+ca-certificates  gitweb           metainfo              terminfo
+cmake            glib-2.0         mime                  ucf
+common-licenses  gnupg            misc                  util-linux
+consolefonts     groff            nano                  vim
+console-setup    grub             openssh               X11
+consoletrans     i18n             os-prober             xfsprogs
+cryptsetup       icons            pam                   zoneinfo
+dbus-1           info             pam-configs           zsh
+debconf          initramfs-tools  perl
+asingh101@cs525:/usr/share$ cd dict
+asingh101@cs525:/usr/share/dict$ ls
+american-english  words
+asingh101@cs525:/usr/share/dict$ ls -ald words
+lrwxrwxrwx 1 root root 16 Mar 15 04:13 words -> american-english
+asingh101@cs525:/usr/share/dict$ wc -l words
+104334 words
+asingh101@cs525:/usr/share/dict$ cd share
+-bash: cd: share: No such file or directory
+asingh101@cs525:/usr/share/dict$ cd ..
+asingh101@cs525:/usr/share$ ls
+aclocal          debianutils      iproute2              perl5
+aclocal-1.17     dhcpcd           iptables              pixmaps
+alsa             dict             java                  pkgconfig
+applications     distro-info      javascript            polkit-1
+apport           doc              keyrings              publicsuffix
+apt              doc-base         libc-bin              python3
+aptitude         dpkg             libdebuginfod-common  python-apt
+at               emacs            libgcrypt20           readline
+autoconf         emacsen-common   libtool               reportbug
+automake-1.17    file             lintian               rsync
+base-files       fish             locale                runit
+base-passwd      gcc              man                   source-highlight
+bash-completion  gdb              maven-repo            systemd
+binfmts          gettext          mdadm                 tabset
+bug              git-core         menu                  tasksel
+ca-certificates  gitweb           metainfo              terminfo
+cmake            glib-2.0         mime                  ucf
+common-licenses  gnupg            misc                  util-linux
+consolefonts     groff            nano                  vim
+console-setup    grub             openssh               X11
+consoletrans     i18n             os-prober             xfsprogs
+cryptsetup       icons            pam                   zoneinfo
+dbus-1           info             pam-configs           zsh
+debconf          initramfs-tools  perl
+asingh101@cs525:/usr/share$ cd ..
+asingh101@cs525:/usr$ cd ..
+asingh101@cs525:/$ ls
+bin   home               installimage.debug  media  root  sys  vmlinuz
+boot  initrd.img         lib                 mnt    run   tmp  vmlinuz.old
+dev   initrd.img.old     lib64               opt    sbin  usr
+etc   installimage.conf  lost+found          proc   srv   var
+asingh101@cs525:/$ readlink bin
+usr/bin
+asingh101@cs525:/$ ls -l bin
+lrwxrwxrwx 1 root root 7 Aug 24 06:12 bin -> usr/bin
+asingh101@cs525:/$ 
